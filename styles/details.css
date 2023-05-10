@@ -1,0 +1,25 @@
+ /* Page-specific styles */
+ .details {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.guests-list {
+    flex-basis: 24%;
+    margin: 0 2rem;
+    padding: 1rem;
+    border: 1px dotted goldenrod;
+}
+
+.locations-list {
+    flex-basis: 24%;
+    margin: 0 2rem;
+    padding: 1rem;
+    border: 1px dotted goldenrod;
+}
+
+.services {
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
