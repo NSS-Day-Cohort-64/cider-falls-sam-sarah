@@ -10,12 +10,12 @@ const database = {
   guests: [
     { id: 1, name: "Disco Dan" },
     { id: 2, name: "Jazzy Jess" },
-    { id: "3", name: "Rockin' Rob" },
-    { id: "4", name: "Funky Fred" },
-    { id: "5", name: "Boogie Betty" },
-    { id: "6", name: "Groovy Greg" },
-    { id: "7", name: "Soulful Sally" },
-    { id: "8", name: "Electric Eli" },
+    { id: 3, name: "Rockin' Rob" },
+    { id: 4, name: "Funky Fred" },
+    { id: 5, name: "Boogie Betty" },
+    { id: 6, name: "Groovy Greg" },
+    { id: 7, name: "Soulful Sally" },
+    { id: 8, name: "Electric Eli" },
     { id: 9, name: "Hip Hop Hannah" },
   ],
   services: [
