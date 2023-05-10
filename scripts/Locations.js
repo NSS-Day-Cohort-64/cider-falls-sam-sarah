@@ -15,7 +15,7 @@ export const Locations = () => {
 
     let locationsHTML = "<ul>";
 
-    for (const locations of locations) {
+    for (const location of locations) {
         locationsHTML += `<li class="locations" data-locationid="${location.id}" data-locationname="${location.name}">${location.name}</li>`;
     }
 
@@ -23,11 +23,6 @@ export const Locations = () => {
 
     return locationsHTML;
 }
-
-const getGuestsByLocation = (locationId) => {
-    const guests = getGuests();
-    return guests.filter(guest => guest.locationId === locationId);
-};
 
 document.addEventListener("click", (event) => {
     if (event.target.classList.contains("locations")) {
@@ -38,3 +33,8 @@ document.addEventListener("click", (event) => {
         alert(`${numGuests} guests in ${locationName}`);
     }
 });
+
+const getGuestsByLocation = (locationId) => {
+    const guests = getGuests();
+    return guests.filter(guest => guest.locationId === locationId);
+};

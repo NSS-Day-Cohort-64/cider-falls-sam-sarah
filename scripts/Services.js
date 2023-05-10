@@ -1,7 +1,7 @@
-import { getLocation, getServices } from "./database.js";
+import { getLocations, getServices } from "./database.js";
 
 const serviceFunction = getServices()
-const locationFunction = getLocation()
+const locationFunction = getLocations()
 
 export const Services = () => {
     let html = "<ol>"

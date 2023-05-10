@@ -32,7 +32,7 @@ const database = {
   ],
 };
 
-export const getLocation = () => {
+export const getLocations = () => {
   return database.locations.map((locations) => ({ ...locations }));
 };
 
