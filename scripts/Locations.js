@@ -1,4 +1,4 @@
-import { getLocations } from "./database.js"
+import { getLocations, getGuests } from "./database.js"
 
 export const Locations = () => {
     let locations = getLocations();
@@ -23,3 +23,18 @@ export const Locations = () => {
 
     return locationsHTML;
 }
+
+const getGuestsByLocation = (locationId) => {
+    const guests = getGuests();
+    return guests.filter(guest => guest.locationId === locationId);
+};
+
+document.addEventListener("click", (event) => {
+    if (event.target.classList.contains("locations")) {
+        const locationId = event.target.dataset.locationid;
+        const locationName = event.target.dataset.locationname;
+        const guests = getGuestsByLocation(locationId);
+        const numGuests = guests.length;
+        alert(`${numGuests} guests in ${locationName}`);
+    }
+});
