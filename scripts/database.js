@@ -1,10 +1,10 @@
 const database = {
   locations: [
     { id: 1, name: "Chamfort River ", guestId: "1, 7", serviceId: "1, 2, 3"},
-    { id: 2, name: "Lost Wolf Hiking Trail", guestId: "2, 8", serviceId: "4,5,6" },
-    { id: 3, name: "Lodge", guestId: "3, 9", serviceId: "9,7,8,5" },
-    { id: 4, name: "Gander River", guestId: "4", serviceId: "3,4" },
-    { id: 5, name: "Campgrounds", guestId: "5", serviceId: "8,9,7" },
+    { id: 2, name: "Lost Wolf Hiking Trail", guestId: "2, 8", serviceId: "4, 5, 6" },
+    { id: 3, name: "Lodge", guestId: "3, 9", serviceId: "9, 7, 8, 5" },
+    { id: 4, name: "Gander River", guestId: "4", serviceId: "3, 4" },
+    { id: 5, name: "Campgrounds", guestId: "5", serviceId: "8, 9, 7" },
     { id: 6, name: "Pine Bluffs ", guestId: "6", serviceId: "4, 5, 10" },
   ],
   guests: [

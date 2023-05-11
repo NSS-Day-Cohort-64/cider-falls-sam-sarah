@@ -1,31 +1,36 @@
 import { getLocations, getServices } from "./database.js";
 
-const serviceFunction = getServices()
-const locationFunction = getLocations()
+const serviceFunction = getServices();
+const locationFunction = getLocations();
 
 export const Services = () => {
-    let html = "<ol>"
+  let html = "<ol>";
 
-    for (const  service of serviceFunction) {
-        html += `<li data-type="services" data-id="${service.id}" data-name="${service.name}">We have the following services:${service.name}</li>`
+  html += "<p>We have the following services:</p>";
+
+  for (const service of serviceFunction) {
+    html += `<li data-type="services" data-id="${service.id}" data-name="${service.name}">${service.name}</li>`;
+  }
+
+  html += "</ol>";
+  return html;
+};
+
+document.addEventListener("click", (clickEvent) => {
+  const itemClicked = clickEvent.target;
+  if (itemClicked.dataset.type === "services") {
+    const serviceId = itemClicked.dataset.id;
+    const serviceName = itemClicked.dataset.name;
+    let matchingLocations = "";
+    for (const location of locationFunction) {
+      if (location.serviceId.split(", ").includes(serviceId)) {
+        matchingLocations += `${location.name}\n`;
+      }
     }
-
-    html += "</ol>"
-    return html
-}
-
-document.addEventListener(
-    "click",
-    (clickEvent) => {
-        const itemClicked = clickEvent.target
-        if (itemClicked.dataset.type === "services") {
-            const serviceId = itemClicked.dataset.id
-            for (const location of locationFunction ) {
-            if (location.serviceId == serviceId) {
-                window.alert(`${serviceFunction.name} is available at ${location.name}`)
-                }
-            }
-        }
+    if (matchingLocations) {
+      window.alert(`${serviceName} is available at:\n${matchingLocations}`);
+    } else {
+      window.alert(`${serviceName} is not available at any location.`);
     }
-)
-
+  }
+});
