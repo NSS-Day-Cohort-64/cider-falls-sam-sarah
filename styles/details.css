@@ -1,25 +1,49 @@
  /* Page-specific styles */
- .details {
+ .services-box {
+    border: 2px solid black;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .services-box h2 {
+    margin-top: 0;
+  }
+  
+  .container {
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-}
-
-.guests-list {
-    flex-basis: 24%;
-    margin: 0 2rem;
-    padding: 1rem;
-    border: 1px dotted goldenrod;
-}
-
-.locations-list {
-    flex-basis: 24%;
-    margin: 0 2rem;
-    padding: 1rem;
-    border: 1px dotted goldenrod;
-}
-
-.services {
+  }
+  
+  .large-box {
+    border: 2px solid black;
+    width: 70%;
+    display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
-}
+    padding: 20px;
+  }
+  
+  .small-box {
+    border: 1px solid black;
+    width: calc(100% / 3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  .small-box img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  
+  .small-box p {
+    margin: 0;
+    text-align: center;
+  }
+  
+  .details {
+    width: 30%;
+    margin-left: 20px;
+  }
+  
