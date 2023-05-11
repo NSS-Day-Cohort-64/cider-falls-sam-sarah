@@ -7,8 +7,8 @@ const mainContainer = document.querySelector("#container")
 const applicationHTML = `
 <h1>Cider Falls Park</h1>
 
+<h2>Services</h2>
 <div class="services-box">
-  <h2>Services</h2>
   ${Services()}
 </div>
 

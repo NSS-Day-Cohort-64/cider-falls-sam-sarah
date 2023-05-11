@@ -19,7 +19,8 @@ export const Locations = () => {
         }
 
         locationsHTML += `<div class="small-box">
-        <p><h3 class="locations" data-locationid="${location.id}" data-locationname="${location.name}">${location.name}</h3>
+        <p>
+        <h3 class="locations" data-locationid="${location.id}" data-locationname="${location.name}">${location.name}</h3>
         <ul>${servicesHTML}</ul>
         </p>
         
