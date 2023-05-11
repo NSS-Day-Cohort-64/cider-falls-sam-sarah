@@ -1,25 +1,33 @@
-import { getLocations, getGuests } from "./database.js"
+import { getLocations, getGuests, getServices} from "./database.js"
 
 export const Locations = () => {
     let locations = getLocations();
 
-    locations = locations.sort((a, b) => {
-        if (a.name < b.name) {
-            return -1;
-        }
-        if (a.name > b.name) {
-            return 1;
-        }
-        return 0;
-    });
-
-    let locationsHTML = "<ul>";
+    let locationsHTML = `<div class="large-box">`;
 
     for (const location of locations) {
-        locationsHTML += `<li class="locations" data-locationid="${location.id}" data-locationname="${location.name}">${location.name}</li>`;
+
+        const serviceIds = location.serviceId.split(", ");
+
+        let servicesHTML = "";
+
+        for (const id of serviceIds) {
+            const service = getServices().find((s) => s.id === parseInt(id));
+            if (service) {
+                servicesHTML += `<li>${service.name}</li>`;
+            }
+        }
+
+        locationsHTML += `<div class="small-box">
+        <p><h3 class="locations" data-locationid="${location.id}" data-locationname="${location.name}">${location.name}</h3>
+        <ul>${servicesHTML}</ul>
+        </p>
+        
+      </div>`
+      
     }
 
-        locationsHTML += "</ul>";
+    locationsHTML += `</div>`;
 
     return locationsHTML;
 }
@@ -30,15 +38,14 @@ const getGuestsByLocation = (locationId) => {
     const guestIds = location.guestId || [];
     const guests = getGuests();
     return guests.filter(guest => guestIds.includes(guest.id));
-  };
-  
-  document.addEventListener("click", (event) => {
+};
+
+document.addEventListener("click", (event) => {
     if (event.target.classList.contains("locations")) {
-      const locationId = event.target.dataset.locationid;
-      const locationName = event.target.dataset.locationname;
-      const guests = getGuestsByLocation(locationId);
-      const numGuests = guests.length;
-      alert(`${numGuests} guests in ${locationName}`);
+        const locationId = event.target.dataset.locationid;
+        const locationName = event.target.dataset.locationname;
+        const guests = getGuestsByLocation(locationId);
+        const numGuests = guests.length;
+        alert(`${numGuests} guests in ${locationName}`);
     }
-  });
-  
+});
