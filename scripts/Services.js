@@ -4,7 +4,7 @@ const serviceFunction = getServices();
 const locationFunction = getLocations();
 
 export const Services = () => {
-  let html = "<ol>";
+  let html = "<ul>";
 
   html += "<p>We have the following services:</p>";
 
@@ -12,7 +12,7 @@ export const Services = () => {
     html += `<li data-type="services" data-id="${service.id}" data-name="${service.name}">${service.name}</li>`;
   }
 
-  html += "</ol>";
+  html += "</ul>";
   return html;
 };
 
