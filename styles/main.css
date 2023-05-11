@@ -3,16 +3,6 @@
 
 /*Typography
 --------------------------------------------------------------*/
-.logo {
-	position: fixed;
-	top: 0;
-	left: 50%;
-	transform: translateX(-50%);
-	z-index: 1000;
-
-  }
-
-
 body,
 button,
 input,
@@ -28,3 +18,8 @@ h1,h2,h3,h4,h5,h6 {
   font-family: "Patua One", serif;
   letter-spacing: 2px;
 }
+
+h1.centered {
+	text-align: center;
+  }
+  

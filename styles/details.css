@@ -1,4 +1,10 @@
 /* Page-specific styles */
+.logo{
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
 .services-box {
   border: 2px solid black;
   flex: auto;
@@ -12,11 +18,12 @@
 
 .container {
   display: flex;
+  justify-content: space-between;
 }
 
 .large-box {
   border: 2px solid black;
-  flex: auto;
+  width: auto;
   display: grid; /* use grid display instead of flex */
   grid-template-columns: repeat(3, 1fr); /* create three columns */
   grid-template-rows: repeat(2, 1fr); /* create two rows */
@@ -44,11 +51,23 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 25%;
+  width: 30%;
   height: 490px;
   margin-left: auto;
   margin-right: 0;
   margin-top: -490px;
   border: 2px solid black;
 }
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+}
+
+.phone, .email, .address {
+  margin: 0 10px;
+}
+
 
